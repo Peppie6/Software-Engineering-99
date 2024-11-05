@@ -1,0 +1,35 @@
+# toy_en_de.yaml
+
+## Where the samples will be written
+save_data: /home/u630910/toy-ende/run/example
+## Where the vocab(s) will be written
+src_vocab: /home/u630910/toy-ende/run/example.vocab.src
+tgt_vocab: /home/u630910/toy-ende/run/example.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: /home/u630910/toy-ende/src-train.txt
+        path_tgt: /home/u630910/toy-ende/tgt-train.txt
+    valid:
+        path_src: /home/u630910/toy-ende/src-val.txt
+        path_tgt: /home/u630910/toy-ende/tgt-val.txt
+
+# toy_en_de.yaml
+
+# Model architecture
+model:
+  architecture: transformer
+
+# Train on a single GPU
+training:
+  world_size: 1
+  gpu_ranks: [0]
+  model_path: toy-ende/run/model
+  save_checkpoint_steps: 500
+  train_steps: 1000
+  valid_steps: 500
+  # adapt dataloading defaults to very small dataset
+  bucket_size: 1000
