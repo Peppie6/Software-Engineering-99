@@ -1,0 +1,131 @@
+<style>
+    .adopt-section { background-color: #fff; display: flex; flex-direction: column; overflow: hidden; }
+    .header { position: relative; display: flex; min-height: 226px; width: 100%; align-items: flex-end; gap: 40px 67px; color: #fff; letter-spacing: -0.46px; justify-content: flex-start; padding: 43px 113px; font: 700 24px Inter, sans-serif; }
+    @media (max-width: 991px) { .header { max-width: 100%; padding: 0 20px; } }
+    .header-background { border-radius: 6px; background-color: #847ff7; position: absolute; z-index: 0; min-height: 226px; width: 100%; right: 0; bottom: 0; height: 226px; }
+    @media (max-width: 991px) { .header-background { max-width: 100%; } }
+    .logo { aspect-ratio: 3.85; object-fit: contain; object-position: center; width: 538px; z-index: 1; min-width: 240px; }
+    @media (max-width: 991px) { .logo { max-width: 100%; } }
+    .nav-item { z-index: 1; }
+    .pet-grid { align-self: center; margin-top: 102px; width: 100%; max-width: 1567px; }
+    @media (max-width: 991px) { .pet-grid { max-width: 100%; margin-top: 40px; } }
+    .pet-row { gap: 20px; display: flex; }
+    @media (max-width: 991px) { .pet-row { flex-direction: column; align-items: stretch; gap: 0; } }
+    .pet-column { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
+    @media (max-width: 991px) { .pet-column { width: 100%; } }
+    .pet-card { border-radius: 25px; background-color: #847ff7; display: flex; flex-grow: 1; flex-direction: column; align-items: flex-start; font-family: Inter, sans-serif; color: #fff; width: 100%; padding: 30px 36px 49px; }
+    @media (max-width: 991px) { .pet-card { max-width: 100%; margin-top: 40px; padding: 0 20px; } }
+    .pet-image { background-color: #d9d9d9; align-self: stretch; height: 284px; }
+    .pet-name { font-size: 40px; font-weight: 700; letter-spacing: -0.88px; }
+    .pet-details { font-size: 24px; font-weight: 500; line-height: 36px; letter-spacing: -0.46px; margin-top: 31px; }
+    .footer { background-color: #847ff7; min-height: 58px; margin-top: 95px; width: 100%; }
+    @media (max-width: 991px) { .footer { max-width: 100%; margin-top: 40px; } }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
+    
+    <section class="adopt-section">
+      <header class="header">
+        <div class="header-background"></div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/536a3369f936a2ef05d2dcf418c77f2503e9ec66220e086c378cd0ced163aabf?placeholderIfAbsent=true&apiKey=04da5563d1574d029b69087db85129a7" alt="Pet Adoption Logo" class="logo" />
+        <nav>
+          <ul class="visually-hidden">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#adopt">Adopt</a></li>
+            <li><a href="#upload-pet">Upload Pet</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a href="#home" class="nav-item">Home</a>
+          <a href="#adopt" class="nav-item">Adopt</a>
+          <a href="#upload-pet" class="nav-item">Upload Pet</a>
+          <a href="#about-us" class="nav-item">About Us</a>
+          <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+      </header>
+    
+      <main class="pet-grid">
+        <div class="pet-row">
+          <article class="pet-column">
+            <div class="pet-card">
+              <div class="pet-image" role="img" aria-label="Image of pet for adoption"></div>
+              <h2 class="pet-name">Animal Name</h2>
+              <p class="pet-details">
+                Animal Description<br />
+                Species<br />
+                Age<br />
+                Behaviour
+              </p>
+            </div>
+          </article>
+          <article class="pet-column">
+            <div class="pet-card">
+              <div class="pet-image" role="img" aria-label="Image of pet for adoption"></div>
+              <h2 class="pet-name">Animal Name</h2>
+              <p class="pet-details">
+                Animal Description<br />
+                Species<br />
+                Age<br />
+                Behaviour
+              </p>
+            </div>
+          </article>
+          <article class="pet-column">
+            <div class="pet-card">
+              <div class="pet-image" role="img" aria-label="Image of pet for adoption"></div>
+              <h2 class="pet-name">Animal Name</h2>
+              <p class="pet-details">
+                Animal Description<br />
+                Species<br />
+                Age<br />
+                Behaviour
+              </p>
+            </div>
+          </article>
+        </div>
+      </main>
+    
+      <div class="pet-grid">
+        <div class="pet-row">
+          <article class="pet-column">
+            <div class="pet-card">
+              <div class="pet-image" role="img" aria-label="Image of pet for adoption"></div>
+              <h2 class="pet-name">Animal Name</h2>
+              <p class="pet-details">
+                Animal Description<br />
+                Species<br />
+                Age<br />
+                Behaviour
+              </p>
+            </div>
+          </article>
+          <article class="pet-column">
+            <div class="pet-card">
+              <div class="pet-image" role="img" aria-label="Image of pet for adoption"></div>
+              <h2 class="pet-name">Animal Name</h2>
+              <p class="pet-details">
+                Animal Description<br />
+                Species<br />
+                Age<br />
+                Behaviour
+              </p>
+            </div>
+          </article>
+          <article class="pet-column">
+            <div class="pet-card">
+              <div class="pet-image" role="img" aria-label="Image of pet for adoption"></div>
+              <h2 class="pet-name">Animal Name</h2>
+              <p class="pet-details">
+                Animal Description<br />
+                Species<br />
+                Age<br />
+                Behaviour
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    
+      <footer class="footer" role="contentinfo">
+        <span class="visually-hidden">Footer content</span>
+      </footer>
+    </section>
