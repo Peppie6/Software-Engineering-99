@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload an Animal</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Shelter Logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="animals.html">Animals</a>
+            <a href="upload.html">Upload</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Upload an Animal</h2>
+            <form id="upload-form" method="POST" enctype="multipart/form-data" action="#">
+                <label for="animal-name">Animal Name:</label>
+                <input type="text" id="animal-name" name="animal-name" placeholder="Enter the animal's name" required>
+
+                <label for="animal-description">Description:</label>
+                <textarea id="animal-description" name="animal-description" rows="4" placeholder="Enter a brief description" required></textarea>
+
+                <label for="animal-image">Image:</label>
+                <input type="file" id="animal-image" name="animal-image" accept="image/*" required>
+
+                <button type="submit" class="btn">Upload</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Animal Shelter</p>
+    </footer>
+</body>
+</html>
