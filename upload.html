@@ -22,7 +22,7 @@
     <main>
         <section>
             <h2>Upload an Animal</h2>
-            <form id="upload-form" method="POST" enctype="multipart/form-data" action="#">
+            <form id="upload-form">
                 <!-- Animal Name -->
                 <label for="animal-name">Name:</label>
                 <input type="text" id="animal-name" name="animal-name" placeholder="Enter the animal's name" required>
@@ -39,19 +39,64 @@
                 <label for="animal-race">Breed (Race):</label>
                 <input type="text" id="animal-race" name="animal-race" placeholder="Enter the breed (e.g., Labrador, Siamese)" required>
 
-                <!-- Animal Description -->
-                <label for="animal-description">Description:</label>
-                <textarea id="animal-description" name="animal-description" rows="4" placeholder="Enter a brief description" required></textarea>
-
                 <!-- Animal Image -->
                 <label for="animal-image">Image:</label>
-                <input type="file" id="animal-image" name="animal-image" accept="image/*" required>
+                <input type="file" id="animal-image" name="animal-image" accept="image/*">
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn">Upload</button>
+                <button type="submit" class="btn" id="upload-button">Upload</button>
+
+                <label for="animal-description">AI-generated description:</label>
+                <p id="animal-description"></p>
             </form>
         </section>
     </main>
+    <script>
+
+        const form = document.getElementById('upload-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            e.returnedValue = false;
+            callAPI();
+            return false;
+        });
+
+        async function callAPI() {
+            document.getElementById("upload-button").disabled = true;
+            document.getElementById('animal-description').innerText = 'Loading...';
+            const name = document.getElementById('animal-name').value;
+            const species = document.getElementById('animal-species').value;
+            const age = document.getElementById('animal-age').value;
+            const race = document.getElementById('animal-race').value;
+
+            const obj = {
+                name: name,
+                type: species,
+                age: parseInt(age),
+                race: race
+            }
+
+            const url = 'https://software-engineering99-api.pepijnml87.workers.dev/api/animals';
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(obj),
+                });
+                const data = await response.json();
+                console.log(data);
+                if (!data.success){
+                    document.getElementById('animal-description').innerText = data.errors;
+                    return;
+                }
+                document.getElementById('animal-description').innerText = data.animal.description;
+            } catch (error) {
+                document.getElementById('animal-description').innerText = error.message;
+                console.error(error);
+            }
+            document.getElementById("upload-button").disabled = false;
+        }
+    </script>
     <footer>
         <p>© 2024 Animal Shelter</p>
     </footer>

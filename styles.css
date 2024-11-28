@@ -95,7 +95,7 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -142,4 +142,12 @@ form button {
 
 form button:hover {
     background-color: #e76f51;
+}
+
+#animal-description {
+    height: fit-content;
+}
+
+#upload-button:disabled {
+    cursor: not-allowed;
 }
